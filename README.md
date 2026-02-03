@@ -31,6 +31,7 @@ One of the defining characteristics of blockchain technology is decentralization
 To ensure that all nodes agree on the current state of the blockchain, consensus mechanisms are used. Consensus mechanisms are protocols that allow distributed nodes to validate and agree on transactions. Common mechanisms include Proof of Work (PoW), where nodes solve complex mathematical problems to add new blocks, and Proof of Stake (PoS), where nodes validate transactions based on the amount of cryptocurrency they hold. These mechanisms prevent double-spending and malicious attacks on the network.
 
 Cryptography plays a crucial role in blockchain security. Transactions are digitally signed using public-key cryptography, ensuring authenticity and non-repudiation. Hash functions are used to generate unique digital fingerprints for blocks, providing data integrity. Together, these cryptographic techniques ensure that blockchain systems are secure, transparent, and tamper-resistant.
+<img width="197" height="256" alt="image" src="https://github.com/user-attachments/assets/4674af63-1933-4a49-812d-4def3794b99e" />
 
 Beyond cryptocurrencies, blockchain supports programmable logic through smart contracts. Smart contracts are self-executing programs stored on the blockchain that automatically enforce predefined rules and conditions. They eliminate the need for intermediaries and enable automated processes such as asset transfers, voting systems, and supply chain tracking.
 
