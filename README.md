@@ -3,68 +3,161 @@
 ## AIM
 To evaluate and compare the effectiveness of prompting techniques (zero-shot, few-shot, chain-of-thought, role-based) across different AI platforms (e.g., ChatGPT, Gemini, Claude, Copilot) in a specific task: text summarization.
 
-## Scenario:
-You are part of a content curation team for an educational platform that delivers quick summaries of research papers to undergraduate students. Your task is to summarize a 500-word technical article on "The Basics of Blockchain Technology" using multiple AI platforms and prompting strategies.
+## Comparison Criteria:
 
 Your goal is to determine which combination of prompting technique + platform provides the best summary in terms of:
 
-Accuracy
+- Accuracy
 
-Coherence
+- Coherence
 
-Simplicity
+- Simplicity
 
-Speed
+- Speed
 
-User experience
+- User experience
 
-## Algorithm
-With platforms confirmed—ChatGPT for the structured, student-oriented summary and Gemini for the concise, list-based one—here's a deeper breakdown. I evaluate based on your criteria, scoring each (1-10) with evidence from the texts, then tally for an overall verdict. This highlights how prompting techniques (ChatGPT's "clear, student-friendly summary of a 500-word article" vs. Gemini's casual "demystify... concise summary") shaped outputs.
+## Explanation
+1. Zero-Shot Prompt
 
-Accuracy (ChatGPT: 9.5 | Gemini: 8.0)
-Accuracy measures factual completeness and precision without myths or omissions.
-ChatGPT strengths: Nails all essentials—decentralization, block structure (transactions + timestamp + hash), consensus (PoW/PoS details), cryptography (public/private keys), smart contracts, applications (supply chain, healthcare), and challenges (scalability, energy). No fluff; cites Bitcoin/Ethereum accurately.
-Gemini strengths: Covers structure (data/hash/previous hash), immutability, consensus basics correctly.
-Gemini weaknesses: Omits smart contracts, cryptography details, real-world apps beyond "supply chains to voting," and challenges. PoS simplified to "coins they hold" (ignores staking nuances).
+Definition
 
-Why ChatGPT wins: Broader, balanced scope mirrors a "technical article," avoiding incomplete primers.
+A zero-shot prompt is a prompt where the AI is asked to perform a task without being given any examples.
+The model relies entirely on its pre-trained knowledge to understand the instruction and produce the output.
 
-Coherence (ChatGPT: 9.0 | Gemini: 7.5)
-Coherence assesses logical flow, transitions, and unified narrative.
-ChatGPT strengths: Paragraph-by-paragraph build: intro → structure → decentralization → consensus → cryptography → smart contracts → apps → conclusion. Phrases like "Another essential component" create seamless links; reads like a cohesive essay.
-Gemini strengths: Headers ("What is Blockchain?", "The Structure") organize well; metaphor ("shared digital spreadsheet") ties ideas.
-Gemini weaknesses: Abrupt shifts (e.g., from security to "Why It Matters"); lists feel fragmented, like notes vs. story.
+In other words:
+Prompt → Instruction only → No demonstrations
 
-Why ChatGPT wins: Narrative arc fosters better retention, ideal for student learning.
+2. Few-Shot Prompt
 
-Simplicity (ChatGPT: 8.5 | Gemini: 8.5)
-Simplicity evaluates plain language, analogies, and accessibility for non-experts.
-ChatGPT strengths: Everyday terms ("chain of blocks," "digital fingerprint" via hash explanation); avoids jargon overload while defining terms inline.
-Gemini strengths: Vivid metaphors ("no boss," "glue that creates the chain"); short sentences/lists for quick grasp.
-Shared traits: Both shun equations/code; target beginners.
+Definition
 
-Tie: ChatGPT slightly more formal (student-friendly), Gemini punchier—both excel.
+A few-shot prompt is a prompting technique where the AI is given a small number of examples (usually 2–5) before the actual task.
+These examples show the pattern of input and expected output, helping the model understand how to perform the task correctly.
 
-Speed (ChatGPT: 7.0 | Gemini: 9.5)
-Speed gauges readability time and scanability (word count, formatting).
-ChatGPT strengths: ~350 words; dense but efficient (2-min read).
-ChatGPT weaknesses: Prose requires linear reading.
-Gemini strengths: ~250 words; bullets/headers allow 1-min skim; numbered lists prioritize key facts.
+In simple terms:
+Prompt = Instruction + Several Examples + New Input
 
-Why Gemini wins: Format suits mobile/fast-paced users; "Key Takeaway" speeds closure.
+3. Chain-of-Thought (CoT) Prompting
 
-User Experience (ChatGPT: 9.0 | Gemini: 8.0)
-User experience covers engagement, tone, visuals, and follow-ups.
-ChatGPT strengths: Friendly/professional tone; explicit options ("Make it shorter... bullet points or slides") empower users. Feels tailored (e.g., "exam-ready/UPSC").
-Gemini strengths: Conversational hook ("demystify... misunderstood"); offers diagram—interactive spark.
-Gemini weaknesses: Fewer customizations; hype-y intro may distract.
+Definition
 
-Why ChatGPT wins: Proactive, versatile extensions enhance satisfaction/utility.
+Chain-of-Thought prompting is a technique where the AI is encouraged to reason step-by-step before giving the final answer.
+Instead of producing a direct output, the model generates intermediate reasoning steps, which improves performance in complex reasoning tasks.
+
+In simple terms:
+Prompt → Step-by-step reasoning → Final answer
+
+4. Role-Based Prompt
+
+Definition
+
+A role-based prompt is a prompting technique where the AI is assigned a specific role, profession, or perspective before answering a question.
+The role guides the tone, expertise, and style of the response, making the output more relevant and realistic.
+
+In simple terms:
+Prompt = Role + Task + Context
+
+## Prompt Chosen under each category and AI tool used
+1. Zero-Shot Prompt
+Prompt - “Explain photosynthesis.”
+AI tool used - Gemini
+
+2. Few shot prompt
+Prompt - "Answer the questions briefly.
+Question: What is the capital of France?
+Answer: Paris
+
+Question: What is the capital of Japan?
+Answer: Tokyo
+
+Question: What is the capital of Australia?
+Answer:"
+AI tool used - Grok AI 
+
+3. Chain of thought prompt
+Prompt - "Ravi has 5 apples. He gives 2 apples to his friend and then buys 4 more apples. 
+How many apples does he have now? Let's think step by step."
+AI tool used - Perplexity AI
+
+4. Role Based prompt
+Prompt - "You are a high school science teacher. 
+Explain the concept of gravity to a 10th-grade student."
+AI tool used - Deepseek
+
+## Comparison 
+AI tool used for comparison - ChatGPT
+1. Prompting Technique: Zero-shot prompting
+Platform: Google Gemini
+
+Strengths
+- High scientific accuracy
+- Structured explanation
+- Fast response generation
+
+Weakness
+- Slightly complex for beginners.
+
+
+2. Prompting Technique: Few-shot prompting
+Platform: Grok AI
+
+Strengths
+- High accuracy
+- Extremely concise answers
+- Clear output format
+
+Limitations
+- Works best for pattern-based tasks (classification, translation, Q&A).
+- Less useful for complex reasoning tasks.
+
+
+3. Prompting Technique: Chain-of-Thought Prompting
+Platform: Perplexity AI
+
+Strengths
+- Clear step-by-step reasoning
+- High transparency and interpretability
+- Excellent for analytical or multi-step problems
+
+Limitation
+- Responses can be longer than necessary for simple tasks.
+
+
+4. Prompting Technique: Role-Based Prompting
+Platform: DeepSeek
+
+Strengths
+- Audience-appropriate explanation
+- Clear educational style
+- High clarity and simplicity
+
+Limitations
+- Depth may be limited if the audience level is basic.
+
+
+| Prompting Technique         | AI Platform   | Accuracy                                       | Coherence                              | Simplicity                                   | Speed                                          | User Experience                                       | Overall Assessment                                            |
+| --------------------------- | ------------- | ---------------------------------------------- | -------------------------------------- | -------------------------------------------- | ---------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------- |
+| **Zero-Shot Prompt**        | Google Gemini | Very High – accurate scientific explanations   | Excellent structure and logical flow   | Moderate – sometimes uses technical terms    | Very Fast – optimized for quick responses      | Very Good – clear formatting and structured responses | Best for **general explanations and summaries**               |
+| **Few-Shot Prompt**         | Grok AI       | Very High – follows example patterns correctly | Excellent pattern consistency          | Excellent – short, direct answers            | Fast – small processing overhead               | Very Good – predictable output format                 | Best for **structured Q&A and classification tasks**          |
+| **Chain-of-Thought Prompt** | Perplexity AI | Very High – step-by-step reasoning             | Excellent logical reasoning            | High – easy to follow reasoning steps        | Moderate – reasoning increases response length | Excellent – transparent reasoning and explanations    | Best for **math, logical reasoning, and analytical problems** |
+| **Role-Based Prompt**       | DeepSeek      | High – correct conceptual explanation          | Very Good – explanation suited to role | Excellent – simplified language for audience | Fast – minimal processing overhead             | Excellent – engaging educational tone                 | Best for **education and audience-specific explanations**     |
+
+
+
+
+
 
 ## Result
-Conclusion: ChatGPT Takes the Crown
-ChatGPT's structured, student-friendly summary outperforms Gemini's concise primer across accuracy, coherence, and user experience, earning a slight edge (43/50 vs. 41.5/50). Its comprehensive coverage, logical flow, and customization options make it the best for solid, educational blockchain overviews—ideal for students or deep learners. Gemini excels in speed and engagement for quick hits but sacrifices depth. Ultimately, ChatGPT + precise prompting yields the top combination for balanced, high-quality summaries on technical topics.
+| Best Category                              | Winning Combination           |
+| ------------------------------------------ | ----------------------------- |
+| **Best Accuracy + Structured Explanation** | Zero-Shot + Gemini            |
+| **Best Reasoning and Problem Solving**     | Chain-of-Thought + Perplexity |
+| **Best Simplicity for Students**           | Role-Based + DeepSeek         |
+| **Best Pattern-Based Tasks**               | Few-Shot + Grok               |
 
+Overall Best Combination:
+Chain-of-Thought Prompt + Perplexity AI because it offers high accuracy, clear reasoning steps, and strong user understanding, especially for analytical tasks.
 
 
 
